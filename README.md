@@ -14,12 +14,12 @@ A simple Twitch Channel Points TTS Reward Script.
 ## Deployment
 **To use this project follow these steps:**
 
-  - Download the Repository.
-  - Unzip it somewhere on your filesystem. 
-  - Open the index.js with a File Editor.
-  - Edit the config on top of the file & save it.
-  - Double click the .html file and copy the url from your browser
-  - Add this URL in your OBS. If you cannot hear the TTS disable "Control audio via OBS"
+  - Download the repository.
+  - Extract it somewhere in your file system.
+  - Open the index.js with a text editor.
+  - Edit the config on top of the file.
+  - Double click on the .html file and copy the URL from your browser.
+  - Add the URL in your OBS as a Browsersource. (If you can't hear TTS, turn off "Control Audio via OBS".)
 
 
 ## Acknowledgements
