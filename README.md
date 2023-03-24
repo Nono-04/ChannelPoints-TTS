@@ -1,6 +1,5 @@
 # ChannelPoints-TTS
-A simple Twitch Channel Points TTS Reward Script.
-
+A simple TTS rewards script for Twitch channel points
 
 ## Features
 
