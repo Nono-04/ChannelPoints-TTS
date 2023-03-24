@@ -104,7 +104,7 @@ window.onload = () => {
                 console.log("Notification started", notif);
 
                 let reward = rewards[notif.title];
-                if (reward) {
+                if (reward && notif.text != "") {
                     console.log("Playing TTS");
                     try {
                         await textToSpeech(reward, notif.text);
