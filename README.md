@@ -10,16 +10,18 @@ A simple TTS rewards script for Twitch channel points
 - Easy to setup
 
 
-## Deployment
+## Usage
 **To use this project follow these steps:**
 
   - Download the repository.
   - Extract it somewhere in your file system.
   - Open the index.js with a text editor.
-  - Edit the config on top of the file.
+  - Edit the variables on top of the script.
   - Double click on the .html file and copy the URL from your browser.
   - Add the URL in your OBS as a Browsersource. (If you can't hear TTS, turn off "Control Audio via OBS".)
 
+## Useful Resources
+- [Elevenlabs VoiceCloning Tutorial](https://www.youtube.com/watch?v=oD0ADULb_2w)
 
 ## Acknowledgements
 
