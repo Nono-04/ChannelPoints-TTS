@@ -2,17 +2,20 @@
 var apiKey = "XXXXXXXXX"; // your elevenlabs api key
 
 // TWITCH PARAMETERS
-var channelId = "1234567"; // your twitch channel id
+var channelId = "12345678"; // your twitch channel id
 
 // rewards
 var rewards = {
-    "AI radd (TTS)": {
+    "Radd (AI TTS)": {
         // reward name (must be the same as the reward name in twitch !! case sensitive)
         ttsCharacterLimit: 300, // max characters to send
         type: "elevenlabs", // elevenlabs or streamelements
         voiceId: "XXXXXXXXXXX", // elevenlabs voice id
         volume: 1, // volume 0.0 - 1.0
         stability: 0.3, // elevenlabs stability 0.0 - 1.0
+        style: 0.5, // elevenlabs values
+        useSpeakerBoost: false, // elevenlabs values
+        modelId: "eleven_monolingual_v1",  // elevenlabs values. Use eleven_monolingual_v1 for english only and eleven_multilingual_v1 for other languages
         similarityBoost: 0.8, // elevenlabs similarityBoost 0.0 - 1.0
     },
     "Brian (Normal TTS)": {
@@ -21,8 +24,6 @@ var rewards = {
         type: "streamelements", // streamelements or elevenlabs
         voiceId: "Brian", // streamelements voice id
         volume: 0.35, // volume 0.0 - 1.0
-        stability: 0, // does not exist for streamelements
-        similarityBoost: 0, // does not exist for streamelements
     },
 };
 
@@ -31,7 +32,7 @@ var rewards = {
 // -----------------
 // DEBUG PARAMETERS
 // -----------------
-var testTTSOnLoad = false; // debug mode to test. true = F5 to play text false = nothing leave this on false if you dont plan to change the code
+var testTTSOnLoad = false; // debug mode to test. true = F5 to play text false = nothing. Leave this on false if you dont plan to change the code.
 var testTTS = "Brian (Normal TTS)"; // reward name to test
 var testText = "Hello world"; // text to test
 
@@ -58,9 +59,12 @@ async function textToSpeech(reward, text) {
             },
             body: JSON.stringify({
                 text: text,
+                model_id: reward["modelId"],
                 voice_settings: {
                     stability: reward["stability"],
                     similarity_boost: reward["similarityBoost"],
+                    style: reward["style"],
+                    use_speaker_boost: reward["useSpeakerBoost"],
                 },
             }),
         };
